@@ -1,7 +1,6 @@
 # Docker Datastack
 
-![Travis-CI Build Status](https://travis-ci.org/mikebirdgeneau/Docker-Datastack.svg)
-
+![Travis-CI Build Status](https://travis-ci.org/mikebirdgeneau/Docker-Datastack.svg?branch=master)
 This project contains a general purpose set of Docker containers including:
 
 1. Jupyter (with Python 3 & R kernels)
