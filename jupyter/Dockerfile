@@ -192,9 +192,7 @@ RUN chown -R $NB_USER:users /home/$NB_USER/.jupyter
 # Add any extra requirements. Done at end to avoid cache busting.
 ADD requirements.txt requirements.txt
 RUN pip install -r requirements.txt
-RUN wget https://github.com/matplotlib/basemap/archive/v1.0.7rel.tar.gz
-RUN pip install v1.0.7rel.tar.gz
-RUN rm v1.0.7rel.tar.gz
+RUN wget https://github.com/matplotlib/basemap/archive/v1.0.7rel.tar.gz; pip install v1.0.7rel.tar.gz; rm v1.0.7rel.tar.gz
 
 ADD ../rstudio/install_packages.R install_packages.R
 RUN /usr/bin/Rscript install_packages.R; rm install_packages.R
