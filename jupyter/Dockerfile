@@ -104,11 +104,13 @@ RUN conda config --add channels r && \
 # Stick with jpeg 8 to avoid problems with R packages
 RUN echo "jpeg 8*" >> /opt/conda/conda-meta/pinned
 
+# Install JupyterHub to get the jupyterhub-singleuser startup script
+RUN pip --no-cache-dir install 'jupyterhub==0.5'
+
 # Install Python 3 packages
 # Remove pyqt and qt pulled in for matplotlib since we're only ever going to
 # use notebook-friendly backends in these images
 RUN conda install --quiet --yes \
-    'ipywidgets=5.1*' \
     'pandas=0.18*' \
     'numexpr=2.5*' \
     'matplotlib=1.5*' \
@@ -125,6 +127,7 @@ RUN conda install --quiet --yes \
     'numba=0.23*' \
     'bokeh=0.11*' \
     'h5py=2.5*' && \
+    conda install -c conda-forge ipywidgets && \
     conda remove --quiet --yes --force qt pyqt && \
     conda clean -tipsy
 # Activate ipywidgets extension in the environment that runs the notebook server
@@ -153,8 +156,10 @@ RUN conda create --quiet --yes -p $CONDA_DIR/envs/python2 python=2.7 \
     'bokeh=0.11*' \
     'h5py=2.5*' \
     'pyzmq' && \
+    conda install -c conda-forge -p $CONDA_DIR/envs/python2 python=2.7 ipywidgets && \
     conda remove -n python2 --quiet --yes --force qt pyqt && \
     conda clean -tipsy
+
 # Add shortcuts to distinguish pip for python2 and python3 envs
 RUN ln -s $CONDA_DIR/envs/python2/bin/pip $CONDA_DIR/bin/pip2 && \
     ln -s $CONDA_DIR/bin/pip $CONDA_DIR/bin/pip3
