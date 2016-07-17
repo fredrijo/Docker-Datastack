@@ -138,7 +138,6 @@ RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix
 # use notebook-friendly backends in these images
 RUN conda create --quiet --yes -p $CONDA_DIR/envs/python2 python=2.7 \
     'ipython=4.2*' \
-    'ipywidgets=5.1*' \
     'pandas=0.18*' \
     'numexpr=2.5*' \
     'matplotlib=1.5*' \
