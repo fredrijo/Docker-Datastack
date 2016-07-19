@@ -198,7 +198,7 @@ ADD requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 RUN wget https://github.com/matplotlib/basemap/archive/v1.0.7rel.tar.gz; pip install v1.0.7rel.tar.gz; rm v1.0.7rel.tar.gz
 
-ADD ../rstudio/install_packages.R install_packages.R
+ADD install_packages.R install_packages.R
 RUN /usr/bin/Rscript install_packages.R; rm install_packages.R
 
 EXPOSE 8888
