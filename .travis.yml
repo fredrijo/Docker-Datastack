@@ -1,12 +1,11 @@
 language: generic
-
 sudo: required
 services:
-    - docker
-
+- docker
 before_install:
-    - make refresh-all
-
+- make refresh-all
 script:
-    - make build-test-all
-
+- make build-test-all
+notifications:
+  slack:
+    secure: O5mbjLta6aP+o5Gx0d4N0uyxov6xAH/mTkB8fPrNBSBppVT7FH7JNR/lYd/wpJf7OaquRSVb6o6Pd8FVtnFyuW/YzQy7AVz8CXUUE+p0aMpTVyFhas0jhlRiSsh45v1dJsYg6LgteqkTcKy9QkW+L6IYW8I/8a7A8tOty5IYlVX2BUDPkWC011z6XkPKfokBX3dzB4Xw0BMaGJwmNZm0bunKRn9L8rHUPJimsiUOo2l7D0MV0VfSWSGIsbf+wTp1GrILxZ8AYvOzlZISwzzJNyD8qXsLaGKX7b0cy+a+ktHx/oxyYZ/dkENomRqOYhWVCemtFyVHZfBts104iPeTeOH2tBfjx+QT2FH1agZ8MiCzycmu0zeqVx45GWeK9LxiZvYjBETAVQhWYg5+dCE27dQQXNjmZDyQLUjVSUfANyZGOVMyLiMptYX8aW+OxtK546ejgdPMoz3jzN8u2naOeZrFa9t7wnZMzBWkzSoKkkQQeoYlb0ShHyWoIYrNa0Bb57joraEn4qKyLnLPN6CGfB4/etiMwX7/xWgRCveJw261HlC1iT1fGbVnpSKXGvlOhsFoIzY8GHelIXbI7u46Pj01nUDCzugtLBsU2I/GJWUQA4/ygIKIobb3MyaMqjj4M9gkGgbTi1Hzu5FQVeOZuQdId2uB+xL1TjuoPT2haGE=
