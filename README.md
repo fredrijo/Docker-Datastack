@@ -1,6 +1,6 @@
 # Docker Datastack
 
-![Travis-CI Build Status](https://travis-ci.org/mikebirdgeneau/Docker-Datastack.svg?branch=master)
+[![Travis-CI Build Status](https://travis-ci.org/mikebirdgeneau/Docker-Datastack.svg?branch=master)](https://travis-ci.org/mikebirdgeneau/Docker-Datastack)
 
 This project contains a general purpose set of Docker containers including:
 
