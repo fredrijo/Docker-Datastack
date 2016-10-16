@@ -15,8 +15,8 @@ The purpose is a consistent (clean) starting point for data analysis and/or appl
 ## Getting started
 
 To launch this project, clone this repository then run:
-`docker-compose up -d`
+`./launch` (launch.sh) from the project directory.
 
-Open a web-browser and visit: [http://localhost/](http://localhost)
+Alternately use `docker-compose up -d` then open a web-browser and visit: [http://localhost/](http://localhost).
 
 Note that you may have issues if you have services running on ports 80, 8787, 8888, 8989, or 3838 as these will conflict with these services. In this case, you may need to edit `docker-compose.yml` before starting these containers.
