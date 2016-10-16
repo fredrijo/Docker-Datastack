@@ -6,7 +6,8 @@ OWNER:=mikebirdgeneau
 
 # need to list these manually because there's a dependency tree
 ALL_STACKS:=jupyter \
-	rstudio
+	rstudio \
+	jupyterlab
 
 ALL_IMAGES:=$(ALL_STACKS)
 
