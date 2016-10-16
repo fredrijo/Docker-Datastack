@@ -1,4 +1,14 @@
 
+web:
+  restart: always
+  image: nginx:alpine
+  ports:
+    - "80:80"
+  volumes:
+    - "./web:/usr/share/nginx/html"
+  #entrypoint: sh -c 'nginx -g daemon-off;'
+
+
 jupyter:
   image: mikebirdgeneau/jupyter
   ports:
@@ -10,7 +20,7 @@ jupyter:
 jupyterlab:
   image: mikebirdgeneau/jupyterlab
   ports:
-    - "8989:8989"
+    - "8989:8888"
   volumes:
     - ./data:/opt/app/data
   entrypoint: sh -c 'jupyter lab --ip=* --port=8888 --no-browser --notebook-dir=/opt/app/data'
