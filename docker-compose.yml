@@ -7,6 +7,14 @@ jupyter:
     - ./data:/opt/app/data
   entrypoint: sh -c 'jupyter notebook --ip=* --port=8888 --no-browser --notebook-dir=/opt/app/data'
 
+jupyterlab:
+  build: mikebirdgeneau/jupyterlab
+  ports:
+    - "8989:8989"
+  volumes:
+    - ./data:/opt/app/data
+  entrypoint: sh -c 'jupyter lab --ip=* --port=8888 --no-browser --notebook-dir=/opt/app/data'
+
 rstudio:
   image: mikebirdgeneau/rstudio
   ports:
