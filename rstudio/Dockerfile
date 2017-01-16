@@ -1,6 +1,6 @@
 FROM rocker/rstudio
 
-RUN apt-get update; apt-get install -y -t unstable --no-install-recommends \
+RUN apt-get update; apt-get install -y --no-install-recommends \
   libnetcdf-dev \
   libhdf5-dev \
   libproj-dev \
